@@ -1,15 +1,16 @@
 package d115
 
 import (
-	"fmt"
-    "os"
+	"os"
 )
 
 func Part1(input string) int {
 	fi, _ := os.ReadFile(input)
+
 	var ans int
+
 	for i := 0; i < len(fi); i++ {
-		switch char := string(fi[i:]); char {
+		switch char := string(fi[i : i+1]); char {
 		case "(":
 			ans += 1
 		case ")":
@@ -18,6 +19,5 @@ func Part1(input string) int {
 			ans += 0
 		}
 	}
-	fmt.Printf("ans %v", ans)
 	return ans
 }
